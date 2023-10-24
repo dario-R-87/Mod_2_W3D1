@@ -73,7 +73,7 @@ let upperFirst = function(str) {
  let modStr="";
 
  for(let i=0; i<str.length; i++){
-  if(str.charAt(i-1)===' ' || i===0)
+  if((i>0 && str.charAt(i-1)===' ') || i===0)
    modStr += str.charAt(i).toUpperCase();
   else
    modStr += str.charAt(i);
