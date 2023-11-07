@@ -98,21 +98,27 @@
       },
     ];
 
-/*const responseHandler = function(){
+let scores = 0;
 
-}*/
+const responseHandler = function(ev, corAns){
+ if(corAns === ev.target.innerText){
+  scores += 1;
+ }console.log(scores);
+ clearInterval(t);
+ clearInterval(t2);
+}
 
 const timerElem = document.querySelector("#timer");
-let counter = 60;
+let counter = 6;
 timerElem.innerText = counter;
 
 const timer = function(){
- if(counter===60)
+ if(counter===6)
   timerElem.classList.add("animation");
  counter -= 1;
  timerElem.innerText = counter;
  if(counter === 0){
-  counter = 60;
+  counter = 6;
   //clearInterval(t);
   timerElem.innerText = counter;
   timerElem.classList.remove("animation");
@@ -129,18 +135,19 @@ const quiz = function(){
 
  const op = document.querySelector("#option");
  //op.innerHTM = "";
- op.innerHTML = `<button onclick="alert('ciao')">${questions[qCount].correct_answer}</button>`;
+ op.innerHTML = `<button onclick="responseHandler(event,'${questions[qCount].correct_answer}')">${questions[qCount].correct_answer}</button>`;
 	
  for(let y=0; y<questions[qCount].incorrect_answers.length; y++){
-  op.innerHTML += `<button onclick="alert('ciao')">${questions[qCount].incorrect_answers[y]}</button>`;
+  op.innerHTML += `<button onclick="responseHandler(event,'${questions[qCount].correct_answer}')">${questions[qCount].incorrect_answers[y]}</button>`;
  }
  qCount += 1;
  if(qCount === questions.length){
   clearInterval(t2);
+  clearInterval(t);
  }
 }
 
-const t2 = setInterval(quiz,60000);
+const t2 = setInterval(quiz,6000);
 
 
 
