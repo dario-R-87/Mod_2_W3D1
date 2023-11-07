@@ -62,7 +62,7 @@ console.log(revString);
  Scrivi una funzione chiamata "upperFirst", che accetta una stringa come parametro e la ritorna rendendo maiuscola ogni lettera iniziale di ogni parola.
 */
 
-/*
+
 let upperFirst = function(str) {
  let modStr="";
 
@@ -76,10 +76,10 @@ let upperFirst = function(str) {
  return modStr;
 }
 
-let string = "i topi non avevano nipoti";
+let string =  "   i topi non avevano nipoti";
 let modString = upperFirst(string);
 console.log(modString);
-*/
+
 
 /* ESERCIZIO 5
  Scrivi una funzione chiamata "giveMeRandom", che accetta come parametro un numero chiamato n e ritorna un array contenente n numeri random contenuti tra 0 e 10.
@@ -147,16 +147,16 @@ console.log(r2);
 /*
 let codify = function(str){
  
- if(str.trim().slice(0,4)==="code")
+ if(str.indexOf("code")===0)
   return str;
  else
   return "code "+str;
 }
 
-let stringa_1 = "c'era una volta topolino...";
+let stringa_1 = "c'era code una volta topolino...";
 let res_1 = codify(stringa_1);
 console.log(res_1);
-let stringa_2 = "code Azzurro, il pomeriggio è tutto azzurro e lungo per me";
+let stringa_2 =    "    code Azzurro, il pomeriggio è tutto azzurro e lungo per me";
 let res_2 = codify(stringa_2);
 console.log(res_2);
 */
