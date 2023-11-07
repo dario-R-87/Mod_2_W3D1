@@ -1,9 +1,9 @@
 const timerElem = document.querySelector("#timer");
-let counter = 60;
+let counter = 6;
 timerElem.innerText = counter;
 
 const timer = function(){
- if(counter===60)
+ if(counter===6)
   timerElem.classList.add("animation");
  counter -= 1;
  timerElem.innerText = counter;
